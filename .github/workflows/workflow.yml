@@ -20,4 +20,4 @@ jobs:
       - name: print current wrk dir
         run: pwd
       - name: Python location
-        run: which test.py
+        run: ls $(pwd)
