@@ -1,10 +1,5 @@
 name: workflow_example
 on: workflow_dispatch
 jobs:
-    first_job:
-	runs-on: ubuntu-latest
-	steps:
-		- name: "my first step"
-		  run: echo "First step"
-		- name: "Second step"
-		  run: echo "Second step"
+	first_job:
+ 		runs-on: ubuntu-latest
