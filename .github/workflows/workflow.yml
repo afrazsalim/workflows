@@ -34,7 +34,7 @@ jobs:
       - name: download artifacts
         uses: actions/download-artifact@v3
       - name: List contents of the directory
-        run: ls $(pwd)
+        run: ls $(pwd)/python_files
       - name: run after downloading artifacts
         run: python test.py
   
