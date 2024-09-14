@@ -8,3 +8,10 @@ jobs:
         run: echo "First step"
       - name: second step
         run: echo "Second step"
+  python_example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the code
+        uses: actions/checkout@v3
+      - name: Run python code
+        run: python test.py
