@@ -17,3 +17,5 @@ jobs:
         run: python test.py
       - name: Listing file
         run: ls /
+      - name: print current wrk dir
+        run: pwd
