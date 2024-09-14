@@ -22,3 +22,18 @@ jobs:
         run: pwd
       - name: Python location
         run: ls $(pwd)
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: python_files
+          path: test.py
+  download_art:
+    needs: python_example
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v3
+      - name: run after downloading artifacts
+        run: python test.py
+  
+        
