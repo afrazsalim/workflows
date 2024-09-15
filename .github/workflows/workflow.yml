@@ -11,6 +11,8 @@ jobs:
   python_example:
     needs: first_job
     runs-on: ubuntu-latest
+    outputs:
+      valuez: ${{ steps.vlaz.outputs.valuez}}
     steps:
       - name: Download the code
         uses: actions/checkout@v3
@@ -27,6 +29,9 @@ jobs:
         with:
           name: python_files
           path: test.py
+      - name: pass_value
+        id: vlaz
+        run: echo "valuez={Test}" >> ${{GITHUB_OUTPUTS}}
   download_art:
     needs: python_example
     runs-on: ubuntu-latest
@@ -37,5 +42,7 @@ jobs:
         run: cd python_files && ls / && python test.py
       - name: run after downloading artifacts
         run: python test.py
+      - name: Getting the data
+        run: echo "${{ needs.python_example.outputs.valuez}}"
   
         
