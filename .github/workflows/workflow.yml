@@ -31,7 +31,7 @@ jobs:
           path: test.py
       - name: pass_value
         id: vlaz
-        run: echo 'valuez={Test}' >> ${{GITHUB_OUTPUT}} ';'
+        run: echo 'valuez={Test}' >> $GITHUB_OUTPUT ';'
   download_art:
     needs: python_example
     runs-on: ubuntu-latest
